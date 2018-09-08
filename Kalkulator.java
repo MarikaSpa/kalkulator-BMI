@@ -38,11 +38,11 @@ public class Kalkulator {
 	ramka.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	
 	wzrost = new JTextField(" np. 175 ", 10);
-	wzrostL= new JLabel("Podaj swój wzrost w cm. : ");
+	wzrostL= new JLabel("Podaj swÃ³j wzrost w cm. : ");
 	
 	
 	waga = new JTextField(" np. 75 ", 10);
-	wagaL= new JLabel("Podaj swoj¹ wagê w kg. : ");
+	wagaL= new JLabel("Podaj swojÂ¹ wagÃª w kg. : ");
 	
 	wynik = new JTextArea(3, 20);
 	wynik.setLineWrap(true);
@@ -80,19 +80,19 @@ public class Kalkulator {
 				wzrostO = Double.parseDouble(wzrost.getText());
 				wagaO = Double.parseDouble(waga.getText());
 				wynikO = wagaO / (wzrostO/100 * wzrostO/100);
-				if (wynikO < 18.5) 
-				wynik.setText(String.valueOf(wynikO) + "\n" + "Masz niedowagê");
-				else if (wynikO < 25 )
-						wynik.setText(String.valueOf(wynikO) + "\n" + "Masz prawid³ow¹ wagê");
-					else if (wynikO < 30) 
-							wynik.setText(String.valueOf(wynikO) + "\n" + "Masz nadwagê");
-						else 
-							wynik.setText(String.valueOf(wynikO) + "\n" + "To ju¿ oty³oœæ!!!");
-						
+				if (wynikO < 18.5) {
+					wynik.setText(String.format("%.1f\nMasz niedowagÄ™", wynikO));
+				}else if (wynikO < 25 ) {
+						wynik.setText(String.format("%.1f\nMasz prawidÅ‚owÄ… wagÄ™", wynikO));
+				}else if (wynikO < 30) {
+							wynik.setText(String.format("%.1f\nMasz nadwagÄ™", wynikO));
+				}else {
+							wynik.setText(String.format("%.1f\nTo juÅ¼ otyÅ‚oÅ›Ä‡!!!", wynikO));
+				}
 				
 			} catch (NumberFormatException e) {
 				
-				wynik.setText("Podana wartoœæ wzrostu lub wagi ma nieprawid³owy format");
+				wynik.setText("Podana wartoÅ“Ã¦ wzrostu lub wagi ma nieprawidÂ³owy format");
 			}
 			
 		
